@@ -1,0 +1,345 @@
+@font-face {
+    font-family: CeraProMedium;
+    src: url(../Ressources/Fonts/Cera\ Pro\ Medium.otf);
+}
+
+@font-face {
+    font-family: CeraProLight;
+    src: url(../Ressources/Fonts/Cera\ Pro\ Light.otf);
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+body
+{
+    background: black;
+    font-family: CeraProMedium;
+}
+
+/* HEADER */
+
+.header#header-scroll
+{
+    display: block !important;
+}
+
+/* TITLE PAGE */
+
+.title-page-connect
+{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0 0 0;
+}
+
+/* CONTAINER CONTENT */
+
+.section
+{
+    background-image: url("../Ressources/300ppi/pannelFichier\ 3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect,
+.connect-with-socials,
+.connect-with-your-mail
+{
+    min-height: 600px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 2px;
+    /* border: 1px solid rgba(177, 176, 176, 0.527); */
+    /* -moz-box-shadow: 2px 2px 5px #888;  
+    -webkit-box-shadow: 2px 2px 5px #888;  
+    box-shadow: 2px 2px 5px #888; */
+}
+
+.connect-with-socials
+{
+    display: none;
+}
+
+/* .connect-with-your-mail
+{
+    display: none;
+} */
+
+.connect-with-your-mail
+{
+    padding: 0px 50px;
+}
+
+.forms
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.connect .logo img
+{
+    width: 250px;
+    margin-top: 50px;
+}
+
+.connect .signup-login
+{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.connect .signup-login .sign-up
+{
+    color: black;
+    font-size: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+
+.connect .signup-login .log-in
+{
+    color: black;
+    font-size: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+.connect .sign-in-socials
+{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.connect .sign-in-socials .google,
+.connect .sign-in-socials .facebook,
+.connect .sign-in-socials .apple
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 40px;
+    width: 100%;
+    border-radius: 2px;
+    color: white;
+    margin: 20px;
+    /* -moz-box-shadow: 4px 4px 10px #888;  
+    -webkit-box-shadow: 4px 4px 10px #888;  
+    box-shadow:4px 4px 6px #888; */
+    cursor: pointer;
+    transition: .5s;
+}
+
+.connect .sign-in-socials .google:hover,
+.connect .sign-in-socials .facebook:hover,
+.connect .sign-in-socials .apple:hover
+{
+    transform: scale(1.1);
+}
+
+.connect .sign-in-socials .google
+{
+    background: #db4a39;
+}
+
+.connect .sign-in-socials .facebook
+{
+    background: #3b5998;
+}
+
+.connect .sign-in-socials .apple
+{
+    background: black;
+}
+
+.connect .sign-in-socials .google .logo-socials,
+.connect .sign-in-socials .facebook .logo-socials,
+.connect .sign-in-socials .apple .logo-socials
+{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect .sign-in-socials .google img,
+.connect .sign-in-socials .facebook img,
+.connect .sign-in-socials .apple img
+{
+    width: 15px;
+}
+
+.connect .sign-in-socials .google .span,
+.connect .sign-in-socials .facebook .span,
+.connect .sign-in-socials .apple .span
+{
+    width: 70%;
+}
+
+.connect .sign-in-socials .google .span span,
+.connect .sign-in-socials .facebook .span span,
+.connect .sign-in-socials .apple .span span
+{
+    font-size: 17px;
+}
+
+.connect .same-account
+{
+    margin-top: 35px;
+    font-family: CeraProLight;
+}
+
+.connect .account-email
+{
+    margin: 20px 0 50px;
+    font-family: CeraProMedium;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.connect .account-email:hover
+{
+    transform: scale(1.1);
+}
+
+/* CONNECT WITH YOUR MAIL */
+
+/* Bordered form */
+form 
+{
+    width:300px;
+    padding: 30px;
+    background: #fff;
+}
+.log-in h1,
+.create-account h2
+{
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.or,
+label
+{
+    font-family: CeraProLight;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] 
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] 
+{
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+input[type=submit]:hover
+{
+    transform: scale(1.1);
+    background: white;
+    color: black;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .connect-with-your-mail{
+        padding: 0px 30px;
+    }
+}
+
+@media (max-width: 703px) {
+    .connect
+    {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 703px) {
+    .forms{
+        flex-direction: column;
+    }
+
+    form{
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .connect-with-your-mail{
+        padding: 0px 15px;
+    }
+
+    form{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .section .connect
+    {
+        width: 100%;
+        border: none;
+    }
+
+    .section .connect .sign-in-socials
+    {
+        width: 95%;
+    }
+}
+
+@media (max-width: 320px) {
+    .section .connect .same-account
+    {
+        font-size: 13px;
+    }
+}
+

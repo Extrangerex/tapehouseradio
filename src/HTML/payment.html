@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../CSS/payment.css">
+
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+
+
+    <!-- SCRIPT -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+
+
+
+    <title>Delivery form</title>
+</head>
+<body>
+
+        
+    <!-- CONTENT -->
+
+    <section class="payment-page">
+
+            
+
+        <div class="section-payment">
+
+
+            <img src="../Ressources/Logo(s)/SVG/logo-shopFichier 3.svg" alt="Logo Tape House Radio" class="logo" style="width: 250px; margin-bottom: 30px;">
+
+
+            <form class="form">
+
+                <span>Pay with Stripe</span>
+
+                <div class="field">
+                    <input type="text" name="name" id="" placeholder="Name" required="required">
+                </div>
+
+                <div class="field">
+                    <input type="email" name="email" id="" placeholder="Your@email.com" required="required">
+                </div>
+
+                <div class="field">
+                    <input type="number" placeholder="Card number" required="required">
+                </div>
+
+                <div class="numbers">
+
+                    <div class="field field-number-mm">
+                        <input type="number" placeholder="mm" required="required">
+                    </div>
+
+                    <span class="light">/</span>
+
+                    <div class="field field-number-yy">
+                        <input type="number" placeholder="yy" required="required">
+                    </div>
+
+                    <div class="field field-number-cvc">
+                        <input type="number" placeholder="cvc" required="required">
+                    </div>
+
+                </div>
+
+
+                <button class="payment" type="submit">PAYMENT</button>
+
+                <button type="submit" class="paypal">
+                    <span>CHECK OUT WITH PAYPAL</span>
+                </button>
+
+
+                <span class="light">- OR -</span>
+
+                <button class="button-pay-apple" type="submit">
+                    <span>PAY WITH APPLE</span>
+                </button>
+                
+            </form>
+
+            <!-- <div class="promo">
+                <form action="" class="promo-code">
+                    <div class="input-promo-code">
+                        <input type="text" placeholder="Enter your promo code here">
+                    </div>
+
+                    <button type="submit">Go !</button>
+                </form>
+            </div> -->
+
+            
+
+        </div>
+
+
+    </section>
+
+
+    <!-- JS -->
+
+    <script src="../JS/menu.js"></script>
+    
+</body>
+</html>

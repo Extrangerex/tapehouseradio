@@ -1,0 +1,254 @@
+@font-face {
+    font-family: CeraProLight;
+    src: url(./Ressources/Fonts/Cera\ Pro\ Light.otf);
+}
+
+@font-face {
+    font-family: CeraProRegular;
+    src: url(./Ressources/Fonts/Cera\ Pro\ Medium.otf);
+}
+
+@font-face {
+    font-family: CeraProBlack;
+    src: url(./Ressources/Fonts/Cera\ Pro\ Black.otf);
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    background: black;
+    font-family: CeraProRegular;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.all
+{
+    position: relative;
+}
+
+#arrow-up
+{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.849);
+    border-radius: 10px 0 0 10px;
+    height: 50px;
+    width: 50px;
+    right: 0px;
+    z-index: 100;
+}
+
+#arrow-up i
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.header .title
+{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+/* .content-live-one
+{
+
+    background-image: url("./bg/SVG/live-one-background-lasts-musicsFichier\ 2.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-live-two
+{
+
+    background-image: url("./bg/SVG/live-two-background-lasts-musicsFichier\ 3.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-vinyls
+{
+
+    background-image: url("./bg/SVG/vinyls-background-lasts-musicsFichier\ 7.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-rap
+{
+
+    background-image: url("./bg/SVG/rap-background-lasts-musicsFichier\ 1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-jazz
+{
+
+    background-image: url("./bg/SVG/jazz-background-lasts-musicsFichier\ 9.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-deep
+{
+
+    background-image: url("./bg/SVG/deep-background-lasts-musicsFichier\ 5.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-exp
+{
+
+    background-image: url("./bg/SVG/exp-background-lasts-musicsFichier\ 8.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-world
+{
+
+    background-image: url("./bg/SVG/world-background-lasts-musicsFichier\ 6.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
+
+.content
+{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+}
+
+.content .last-music
+{
+    position: relative;
+    /* margin: 25px; */
+    width: 20%;
+    min-height: 100%;
+    overflow: hidden;
+    /* margin: -4px 0px; */
+}
+
+.content .last-music img
+{
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.content .last-music img:hover
+{
+    transform: scale(1.2);
+}
+
+.content .last-music span
+{
+    color: black;
+}
+
+.content .last-music .meta-hour
+{
+    position: absolute;
+    bottom: 58px;
+    left: 3px;
+    background: white;
+    /* border-radius: 50px; */
+    padding: 0px 5px;
+    height: 20px;
+    max-width: 144px;
+    overflow: hidden;
+}
+
+.content .last-music .meta-artist
+{
+    position: absolute;
+    bottom: 35px;
+    left: 3px;
+    background: white;
+    /* border-radius: 50px; */
+    padding: 0px 5px;
+    height: 20px;
+    max-width: 144px;
+    overflow: hidden;
+}
+
+.content .last-music .meta-music
+{
+    position: absolute;
+    bottom: 12px;
+    left: 3px;
+    background: white;
+    /* border-radius: 50px; */
+    padding: 0px 5px;
+    height: 20px;
+    max-width: 144px;
+    overflow: hidden;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+    .content .last-music
+    {
+        width: 25%;
+    }
+}
+
+@media (max-width: 750px) {
+    .content .last-music
+    {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 550px) {
+    .content .last-music
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content .last-music
+    {
+        width: 100%;
+    }
+}
