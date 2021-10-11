@@ -1,24 +1,41 @@
-import React from 'react';
-import './css/main.css'
+import React from "react";
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Connect } from './pages/Connect';
-import { Favorites } from './pages/Favorites';
-import { Lasts } from './pages/Lasts';
-import { Payment } from './pages/Payment';
-import { Prices } from './pages/Prices';
-import { Profile } from './pages/Profile';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faFacebook, faInstagram, faMixcloud, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
-
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Connect } from "./pages/Connect";
+import { Favorites } from "./pages/Favorites";
+import { Lasts } from "./pages/Lasts";
+import { Payment } from "./pages/Payment";
+import { Prices } from "./pages/Prices";
+import { Profile } from "./pages/Profile";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faApple,
+  faFacebook,
+  faFacebookF,
+  faGoogle,
+  faGooglePlay,
+  faInstagram,
+  faMixcloud,
+  faSpotify,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-
-  library.add([faFacebook, faInstagram, faMixcloud, faSpotify, faYoutube]);
-
-
+  library.add([
+    faFacebook,
+    faInstagram,
+    faMixcloud,
+    faSpotify,
+    faYoutube,
+    faPlay,
+    faPause,
+    faApple,
+    faGoogle,
+    faGooglePlay,
+    faFacebookF,
+  ]);
 
   return (
     <Router>
