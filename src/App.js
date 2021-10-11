@@ -7,7 +7,7 @@ import Latest from './components/LatestComponent';
 import Players from './components/PlayersComponent';
 import SendUs from './components/SendUsComponent';
 import Footer from './components/FooterComponent';
-import './CSS/main.css'
+import './css/main.css'
 import IFrame from './components/IFramesComponent';
 
 function App() {

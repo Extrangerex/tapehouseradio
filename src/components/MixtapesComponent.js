@@ -1,5 +1,5 @@
 import React from "react";
-import playSolid from '../Ressources/SVG/play-solid.svg';
+import playSolid from '../static/svg/play-solid.svg';
 
 
 function Mixtapes(){

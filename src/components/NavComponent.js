@@ -1,8 +1,8 @@
 /* eslint-disable react/style-prop-object */
 import React from 'react'
-import icons8Utilisateur96 from '../Ressources/PNG/icons8-utilisateur-96.png';
-import nouveaulogonoirFichier from '../Ressources/SVG/nouveaulogonoirFichier 3.png';
-import icons8Jouer90 from '../Ressources/PNG/icons8-jouer-90.png';
+import icons8Utilisateur96 from '../static/png/icons8-utilisateur-96.png';
+import nouveaulogonoirFichier from '../static/svg/nouveaulogonoirFichier 3.png';
+import icons8Jouer90 from '../static/png/icons8-jouer-90.png';
 
 function Nav(){
     return(<section className="nav">
@@ -16,7 +16,7 @@ function Nav(){
             <button>SUPPORT US</button>
             <div className="menu-btn">
                 <div className="circle">
-                    <div className="eye"></div>
+                    <div className="eye" />
                 </div>
             </div>
         </div>
