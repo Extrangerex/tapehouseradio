@@ -1,43 +1,28 @@
-@font-face {
-    font-family: CeraProMedium;
-    src: url(../static/fonts/Cera\ Pro\ Medium.otf);
-}
-
-@font-face {
-    font-family: CeraProLight;
-    src: url(../static/fonts/Cera\ Pro\ Light.otf);
-}
-
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a
-{
+a {
     color: black;
     text-decoration: none;
 }
 
-body
-{
+body {
     background: black;
     font-family: CeraProMedium;
 }
 
 /* HEADER */
 
-.header#header-scroll
-{
+.header#header-scroll {
     display: block !important;
 }
 
 /* TITLE PAGE */
 
-.title-page-connect
-{
+.title-page-connect {
     width: 100%;
     text-align: center;
     font-size: 40px;
@@ -46,8 +31,7 @@ body
 
 /* CONTAINER CONTENT */
 
-.section
-{
+.section {
     background-image: url("../static/300ppi/pannelFichier\ 3.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,8 +45,7 @@ body
 
 .connect,
 .connect-with-socials,
-.connect-with-your-mail
-{
+.connect-with-your-mail {
     min-height: 600px;
     min-width: 350px;
     display: flex;
@@ -77,8 +60,7 @@ body
     box-shadow: 2px 2px 5px #888; */
 }
 
-.connect-with-socials
-{
+.connect-with-socials {
     display: none;
 }
 
@@ -87,26 +69,22 @@ body
     display: none;
 } */
 
-.connect-with-your-mail
-{
+.connect-with-your-mail {
     padding: 0px 50px;
 }
 
-.forms
-{
+.forms {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.connect .logo img
-{
+.connect .logo img {
     width: 250px;
     margin-top: 50px;
 }
 
-.connect .signup-login
-{
+.connect .signup-login {
     width: 80%;
     display: flex;
     align-items: center;
@@ -114,8 +92,7 @@ body
     margin-bottom: 50px;
 }
 
-.connect .signup-login .sign-up
-{
+.connect .signup-login .sign-up {
     color: black;
     font-size: 25px;
     padding-bottom: 20px;
@@ -123,8 +100,7 @@ body
     text-align: center;
 }
 
-.connect .signup-login .log-in
-{
+.connect .signup-login .log-in {
     color: black;
     font-size: 25px;
     padding-bottom: 20px;
@@ -132,8 +108,7 @@ body
     text-align: center;
 }
 
-.connect .sign-in-socials
-{
+.connect .sign-in-socials {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -143,8 +118,7 @@ body
 
 .connect .sign-in-socials .google,
 .connect .sign-in-socials .facebook,
-.connect .sign-in-socials .apple
-{
+.connect .sign-in-socials .apple {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -157,35 +131,30 @@ body
     -webkit-box-shadow: 4px 4px 10px #888;  
     box-shadow:4px 4px 6px #888; */
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .connect .sign-in-socials .google:hover,
 .connect .sign-in-socials .facebook:hover,
-.connect .sign-in-socials .apple:hover
-{
+.connect .sign-in-socials .apple:hover {
     transform: scale(1.1);
 }
 
-.connect .sign-in-socials .google
-{
+.connect .sign-in-socials .google {
     background: #db4a39;
 }
 
-.connect .sign-in-socials .facebook
-{
+.connect .sign-in-socials .facebook {
     background: #3b5998;
 }
 
-.connect .sign-in-socials .apple
-{
+.connect .sign-in-socials .apple {
     background: black;
 }
 
 .connect .sign-in-socials .google .logo-socials,
 .connect .sign-in-socials .facebook .logo-socials,
-.connect .sign-in-socials .apple .logo-socials
-{
+.connect .sign-in-socials .apple .logo-socials {
     width: 30%;
     display: flex;
     justify-content: center;
@@ -194,69 +163,60 @@ body
 
 .connect .sign-in-socials .google img,
 .connect .sign-in-socials .facebook img,
-.connect .sign-in-socials .apple img
-{
+.connect .sign-in-socials .apple img {
     width: 15px;
 }
 
 .connect .sign-in-socials .google .span,
 .connect .sign-in-socials .facebook .span,
-.connect .sign-in-socials .apple .span
-{
+.connect .sign-in-socials .apple .span {
     width: 70%;
 }
 
 .connect .sign-in-socials .google .span span,
 .connect .sign-in-socials .facebook .span span,
-.connect .sign-in-socials .apple .span span
-{
+.connect .sign-in-socials .apple .span span {
     font-size: 17px;
 }
 
-.connect .same-account
-{
+.connect .same-account {
     margin-top: 35px;
     font-family: CeraProLight;
 }
 
-.connect .account-email
-{
+.connect .account-email {
     margin: 20px 0 50px;
     font-family: CeraProMedium;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.connect .account-email:hover
-{
+.connect .account-email:hover {
     transform: scale(1.1);
 }
 
 /* CONNECT WITH YOUR MAIL */
 
 /* Bordered form */
-form 
-{
-    width:300px;
+form {
+    width: 300px;
     padding: 30px;
     background: #fff;
 }
 .log-in h1,
-.create-account h2
-{
+.create-account h2 {
     padding-bottom: 10px;
     font-size: 24px;
 }
 
 .or,
-label
-{
+label {
     font-family: CeraProLight;
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] 
-{
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -266,8 +226,7 @@ input[type=text], input[type=password]
 }
 
 /* Set a style for all buttons */
-input[type=submit] 
-{
+input[type="submit"] {
     background-color: black;
     color: white;
     padding: 14px 20px;
@@ -279,8 +238,7 @@ input[type=submit]
     transition: 0.5s;
 }
 
-input[type=submit]:hover
-{
+input[type="submit"]:hover {
     transform: scale(1.1);
     background: white;
     color: black;
@@ -289,57 +247,52 @@ input[type=submit]:hover
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-    .connect-with-your-mail{
+    .connect-with-your-mail {
         padding: 0px 30px;
     }
 }
 
-@media (max-width: 703px) {
-    .connect
-    {
+@media (max-height: 800px) and (max-width: 703px) {
+    .connect {
         height: 100%;
         width: 100%;
     }
 }
 
 @media (max-width: 703px) {
-    .forms{
+    .forms {
         flex-direction: column;
     }
 
-    form{
+    form {
         width: 100%;
     }
 }
 
 @media (max-width: 450px) {
-    .connect-with-your-mail{
+    .connect-with-your-mail {
         padding: 0px 15px;
     }
 
-    form{
+    form {
         padding-left: 0;
         padding-right: 0;
     }
 }
 
 @media (max-width: 400px) {
-    .section .connect
-    {
+    .section .connect {
         width: 100%;
         border: none;
     }
 
-    .section .connect .sign-in-socials
-    {
+    .section .connect .sign-in-socials {
         width: 95%;
     }
 }
 
 @media (max-width: 320px) {
-    .section .connect .same-account
-    {
+    .section .connect .same-account {
         font-size: 13px;
     }
 }
-

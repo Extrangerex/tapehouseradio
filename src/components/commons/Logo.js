@@ -1,5 +1,7 @@
+import logoShopFile from '../../static/logo/SVG/logo-shopFichier 3.svg';
+
 export function Logo() {
     return (
-        <img src="../../static/logo/SVG/logo-shopFichier 3.svg" alt="Logo Tape House"/>
+        <img src={logoShopFile} alt="Logo Tape House"/>
     );
 }

@@ -1,28 +1,37 @@
 import React from 'react';
-import Menu from './components/MenuComponent';
-import Nav from './components/NavComponent';
-import BlockCaroussel from './components/BlockCarrousselComponent';
-import Mixtapes from './components/MixtapesComponent';
-import Latest from './components/LatestComponent';
-import Players from './components/PlayersComponent';
-import SendUs from './components/SendUsComponent';
-import Footer from './components/FooterComponent';
 import './css/main.css'
-import IFrame from './components/IFramesComponent';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Connect } from './pages/Connect';
+import { Favorites } from './pages/Favorites';
+import { Lasts } from './pages/Lasts';
+import { Payment } from './pages/Payment';
+import { Prices } from './pages/Prices';
+import { Profile } from './pages/Profile';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faFacebook, faInstagram, faMixcloud, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
+
 
 function App() {
+
+  library.add([faFacebook, faInstagram, faMixcloud, faSpotify, faYoutube]);
+
+
+
   return (
-    <>
-      <Menu></Menu>
-      <Nav></Nav>
-      <BlockCaroussel></BlockCaroussel>
-      <Mixtapes></Mixtapes>
-      <Latest></Latest>
-      <IFrame></IFrame>
-      <Players></Players>
-      <SendUs></SendUs>
-      <Footer></Footer>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/connect" component={Connect} />
+        <Route path="/favorites" component={Favorites} />
+        <Route path="/lasts" component={Lasts} />
+        <Route path="/payment" component={Payment} />
+        <Route path="/prices" component={Prices} />
+        <Route path="/profile" component={Profile} />
+      </Switch>
+    </Router>
   );
 }
 

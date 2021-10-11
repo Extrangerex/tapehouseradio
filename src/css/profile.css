@@ -1,33 +1,3 @@
-@font-face {
-    font-family: CeraProLight;
-    src: url("../static/fonts/Cera\ Pro\ Light.otf");
-}
-
-@font-face {
-    font-family: CeraProRegular;
-    src: url("../static/fonts/Cera\ Pro\ Medium.otf");
-}
-
-@font-face {
-    font-family: CeraProBlack;
-    src: url("../static/fonts/Cera\ Pro\ Black.otf");
-}
-
-
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body
-{
-    background: black;
-    color: white;
-    font-family: CeraProBlack;
-}
-
 /* .account-page-profile.spa
 {
     display: none;
@@ -37,8 +7,7 @@ body
     width: 100%;
 } */
 
-.account-page-profile.activateContenu
-{
+.account-page-profile.activateContenu {
     animation: fadeprofilepage 1s forwards;
     display: block;
 }
@@ -52,8 +21,7 @@ body
     }
 }
 
-.account-page-profile .all-content-profile
-{
+.account-page-profile .all-content-profile {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -63,26 +31,23 @@ body
     flex-wrap: wrap;
 }
 
-.account-page-profile .content-profile
-{
+.account-page-profile .content-profile {
     min-height: 600px;
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background: black;
 }
 
-.account-page-profile .all-content-profile span
-{
+.account-page-profile .all-content-profile span {
     color: white;
 }
 
 /* PROFILE SIDEBAR */
 
-.account-page-profile .content-profile .profile-sidebar
-{
+.account-page-profile .content-profile .profile-sidebar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,16 +56,14 @@ body
     border-bottom: 1px solid white;
 }
 
-.account-page-profile .content-profile .profile-sidebar .profile-menu
-{
+.account-page-profile .content-profile .profile-sidebar .profile-menu {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
     padding-right: 6px;
 }
 
-.account-page-profile .content-profile .profile-sidebar .profile-menu span
-{
+.account-page-profile .content-profile .profile-sidebar .profile-menu span {
     display: flex;
     font-family: CeraProBlack;
     font-size: 17px;
@@ -109,24 +72,23 @@ body
     position: relative;
     color: rgb(151, 151, 151);
     z-index: 1;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
-.account-page-profile .content-profile .profile-sidebar .profile-menu span i
-{
+.account-page-profile .content-profile .profile-sidebar .profile-menu span i {
     width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     background: black;
-    color:rgb(151, 151, 151);
+    color: rgb(151, 151, 151);
     z-index: 2;
 }
 
 .account-page-profile .content-profile .profile-sidebar .profile-menu span b::after {
-    content: '';
-    transform-origin: 0 0; 
+    content: "";
+    transform-origin: 0 0;
     transform: scaleX(0);
     position: absolute;
     bottom: -22px;
@@ -135,19 +97,18 @@ body
     height: 4px;
     background: white;
     opacity: 0.8;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
 .account-page-profile .content-profile .profile-sidebar .profile-menu b:hover::after,
-.account-page-profile .content-profile .profile-sidebar .profile-menu span:hover{
+.account-page-profile .content-profile .profile-sidebar .profile-menu span:hover {
     transform: scaleX(1);
     color: white;
 }
 
 /* PROFILE CONTENT */
 
-.account-page-profile .content-profile .profile-content
-{
+.account-page-profile .content-profile .profile-content {
     height: 100%;
     width: 100%;
     display: flex;
@@ -160,8 +121,7 @@ body
 
 /* FAVORITES */
 
-.account-page-profile .content-profile .profile-content .profile-content-favorites
-{
+.account-page-profile .content-profile .profile-content .profile-content-favorites {
     height: 330px;
     display: flex;
     flex-direction: column;
@@ -174,16 +134,14 @@ body
     opacity: 0;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-favorites span
-{
+.account-page-profile .content-profile .profile-content .profile-content-favorites span {
     font-size: 20px;
     line-height: 35px;
     margin-bottom: 30px;
     font-family: CeraProLight;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-favorites button
-{
+.account-page-profile .content-profile .profile-content .profile-content-favorites button {
     height: 40px;
     width: 180px;
     background: black;
@@ -193,11 +151,10 @@ body
     cursor: pointer;
     border: 1px solid white;
     border-radius: 50px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-favorites button:hover
-{
+.account-page-profile .content-profile .profile-content .profile-content-favorites button:hover {
     background: white;
     color: black;
     border-color: black;
@@ -205,8 +162,7 @@ body
 
 /* LATEST */
 
-.account-page-profile .content-profile .profile-content .profile-content-latest
-{
+.account-page-profile .content-profile .profile-content .profile-content-latest {
     height: 330px;
     display: flex;
     flex-direction: column;
@@ -219,16 +175,14 @@ body
     opacity: 0;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-latest span
-{
+.account-page-profile .content-profile .profile-content .profile-content-latest span {
     font-size: 20px;
     line-height: 35px;
     margin-bottom: 30px;
     font-family: CeraProLight;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-latest button
-{
+.account-page-profile .content-profile .profile-content .profile-content-latest button {
     height: 40px;
     width: 220px;
     background: black;
@@ -238,11 +192,10 @@ body
     cursor: pointer;
     border: 1px solid white;
     border-radius: 50px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-latest  button:hover
-{
+.account-page-profile .content-profile .profile-content .profile-content-latest button:hover {
     background: white;
     color: black;
     border-color: black;
@@ -250,8 +203,7 @@ body
 
 /* ACCOUNT */
 
-.account-page-profile .content-profile .profile-content .profile-content-infos
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos {
     height: 370px;
     display: flex;
     flex-direction: column;
@@ -264,8 +216,7 @@ body
 }
 
 .account-page-profile .content-profile .profile-content .profile-content-infos .you-are-connected,
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,15 +224,23 @@ body
     width: 450px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .you-are-connected .you-are-connected-left,
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-left
-{
+.account-page-profile
+    .content-profile
+    .profile-content
+    .profile-content-infos
+    .you-are-connected
+    .you-are-connected-left,
+.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-left {
     width: 100px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .you-are-connected .you-are-connected-right,
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right
-{
+.account-page-profile
+    .content-profile
+    .profile-content
+    .profile-content-infos
+    .you-are-connected
+    .you-are-connected-right,
+.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,8 +248,7 @@ body
     width: 350px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right input
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right input {
     text-align: center;
     border-radius: 10px;
     border: none;
@@ -300,8 +258,7 @@ body
     margin-right: 5px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right button
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right button {
     text-align: center;
     width: 70px;
     border-radius: 10px;
@@ -313,34 +270,35 @@ body
     cursor: pointer;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .newsletters .newsletters-right button:hover
-{
+.account-page-profile
+    .content-profile
+    .profile-content
+    .profile-content-infos
+    .newsletters
+    .newsletters-right
+    button:hover {
     background: rgb(151, 151, 151);
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .trait
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .trait {
     width: 100%;
     height: 2px;
     background: rgb(151, 151, 151);
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .log-out
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .log-out {
     margin: 50px;
     font-family: CeraProLight;
     cursor: pointer;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-infos .log-out:hover
-{
+.account-page-profile .content-profile .profile-content .profile-content-infos .log-out:hover {
     color: rgb(151, 151, 151);
 }
 
 /* PLANS */
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions {
     height: 370px;
     display: flex;
     flex-direction: column;
@@ -352,13 +310,11 @@ body
     opacity: 0;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .title
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .title {
     margin-bottom: 30px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -373,32 +329,27 @@ body
     cursor: pointer;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-one
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-one {
     color: black;
     background: white;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-one .price
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-one .price {
     color: black;
 }
 
 .account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-two,
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-three
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card-plan-three {
     color: white;
     background: green;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card b
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions .card b {
     font-size: 14px;
     font-family: CeraProLight;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-subscriptions button
-{
+.account-page-profile .content-profile .profile-content .profile-content-subscriptions button {
     cursor: pointer;
     height: 25px;
     width: 150px;
@@ -410,8 +361,7 @@ body
 
 /* INVOICES */
 
-.account-page-profile .content-profile .profile-content .profile-content-payments
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments {
     height: 370px;
     display: flex;
     flex-direction: column;
@@ -423,53 +373,45 @@ body
     opacity: 0;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .title
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .title {
     text-align: center;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .invoices
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .invoices {
     width: 350px;
     font-family: CeraProRegular;
     margin: 30px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice {
     display: flex;
     align-items: center;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice .dates
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice .dates {
     width: 80px;
     font-size: 15px;
     margin: 10px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice .infos
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .invoices .invoice .infos {
     font-size: 18px;
     margin: 10px 0px;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments hr
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments hr {
     height: 1px;
     border: none;
     background: white;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments .button-view-all-invoices-div
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments .button-view-all-invoices-div {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.account-page-profile .content-profile .profile-content .profile-content-payments button
-{
+.account-page-profile .content-profile .profile-content .profile-content-payments button {
     cursor: pointer;
     height: 30px;
     width: 150px;
@@ -481,20 +423,17 @@ body
 
 /* ANIM */
 
-.account-page-profile .active
-{
+.account-page-profile .active {
     color: white !important;
     transition: all 0.3 ease;
     transform: scale(1.2);
 }
 
-.account-page-profile .content-profile .profile-content .contenu
-{
+.account-page-profile .content-profile .profile-content .contenu {
     display: none;
 }
 
-.account-page-profile .content-profile .profile-content .activeContenu
-{
+.account-page-profile .content-profile .profile-content .activeContenu {
     display: block;
     animation: fade 0.5s forwards;
 }
@@ -510,8 +449,7 @@ body
 
 /* --- FOOTER --- */
 
-.footer-page-account footer
-{
+.footer-page-account footer {
     height: 100px;
     width: 100%;
     background: black;
@@ -523,8 +461,7 @@ body
     bottom: 0;
 }
 
-.footer-page-account footer .social-icons
-{
+.footer-page-account footer .social-icons {
     height: 100%;
     width: 80%;
     display: flex;
@@ -533,8 +470,7 @@ body
     border-top: 1px solid white;
 }
 
-.footer-page-account footer .social-icons i
-{
+.footer-page-account footer .social-icons i {
     margin: 0 10px;
     font-size: 20px;
     color: white;

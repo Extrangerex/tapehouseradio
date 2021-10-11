@@ -1,23 +1,10 @@
-@font-face {
-    font-family: CeraProBlack;
-    src: url("../static/fonts/Cera\ Pro\ Black.otf");
-}
-
-@font-face {
-    font-family: CeraProLight;
-    src: url("../static/fonts/Cera\ Pro\ Light.otf");
-}
-
-
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body
-{
+body {
     background: black;
     font-family: CeraProBlack;
     text-align: center;
@@ -32,8 +19,7 @@ body
     width: 100%;
 } */
 
-.activateContenu
-{
+.activateContenu {
     animation: fade 1s forwards;
     display: block;
 }
@@ -47,8 +33,7 @@ body
     }
 }
 
-body
-{
+body {
     background-image: url("../static/300ppi/pannelFichier\ 3.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -60,15 +45,13 @@ body
     align-items: center;
 }
 
- .content-prices
-{
+.content-prices {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
- .cards
-{
+.cards {
     max-width: 1500px;
     min-height: 100vh;
     display: flex;
@@ -78,8 +61,7 @@ body
     padding: 90px 0;
 }
 
- .cards .card
-{
+.cards .card {
     height: 400px;
     width: 250px;
     display: flex;
@@ -89,40 +71,36 @@ body
     background: white;
     border-radius: 10px;
     margin: 30px;
-    -moz-box-shadow: 4px 4px 10px #000;  
-    -webkit-box-shadow: 4px 4px 10px #000;  
-    box-shadow:4px 4px 6px #000;
+    -moz-box-shadow: 4px 4px 10px #000;
+    -webkit-box-shadow: 4px 4px 10px #000;
+    box-shadow: 4px 4px 6px #000;
 }
 
- .cards .card h1
-{
+.cards .card h1 {
     font-size: 55px;
     padding: 20px;
 }
 
- .cards .card .pricetitle
-{
+.cards .card .pricetitle {
     font-size: 20px;
     font-family: CeraProBlack;
     margin-top: 17px;
 }
 
- .cards .card .access,
- .cards .card .latests,
- .cards .card .favorits,
- .cards .card .discounts,
- .cards .card .engagement,
- .cards .card .details
-{
+.cards .card .access,
+.cards .card .latests,
+.cards .card .favorits,
+.cards .card .discounts,
+.cards .card .engagement,
+.cards .card .details {
     font-size: 15px;
     font-family: CeraProLight;
     padding: 10px;
 }
 
- .cards .card .button1,
- .cards .card .button2,
- .cards .card .button3
-{
+.cards .card .button1,
+.cards .card .button2,
+.cards .card .button3 {
     height: 30px;
     width: 100px;
     display: flex;
@@ -133,32 +111,27 @@ body
     cursor: pointer;
 }
 
- .cards .card .button1
-{
+.cards .card .button1 {
     background: black;
     color: white;
 }
 
- .cards .card .button2,
- .cards .card .button3
-{
+.cards .card .button2,
+.cards .card .button3 {
     background: green;
     color: white;
 }
 
- .cards .card .board
-{
+.cards .card .board {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
 }
 
- .cards .card .board i
-{
+.cards .card .board i {
     color: green;
 }
 
- .cards .card .board .times
-{
+.cards .card .board .times {
     color: red;
 }

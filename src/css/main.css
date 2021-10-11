@@ -1,22 +1,3 @@
-@font-face {
-    font-family: CeraProLight;
-    src: url("../static/fonts/Cera\ Pro\ Light.otf");
-}
-
-@font-face {
-    font-family: CeraProBlack;
-    src: url("../static/fonts/Cera\ Pro\ Black.otf");
-}
-
-@font-face {
-    font-family: CeraProBlackItalic;
-    src: url("../static/fonts/Cera\ Pro\ Black\ Italic.otf");
-}
-
-@font-face {
-    font-family: CeraProRegularItalic;
-    src: url("../static/fonts/Cera\ Pro\ Regular\ Italic.otf");
-}
 
 *
 {
@@ -709,27 +690,27 @@ i
 
 .mixtapes .all .card-two
 {
-    background-image: url("../static/images/jazzmatazz.jpeg");
+    background-image: url("../Ressources/Images/jazzmatazz.jpeg");
 }
 
 .mixtapes .all .card-three
 {
-    background-image: url("../static/images/hnny.jpg");
+    background-image: url("../Ressources/Images/hnny.jpg");
 }
 
 .mixtapes .all .card-four
 {
-    background-image: url("../static/images/madcat.jpeg");
+    background-image: url("../Ressources/Images/madcat.jpeg");
 }
 
 .mixtapes .all .card-five
 {
-    background-image: url("../static/images/pochette232323.jpeg");
+    background-image: url("../Ressources/Images/pochette232323.jpeg");
 }
 
 .mixtapes .all .card-six
 {
-    background-image: url("../static/images/mf-doom.jpeg");
+    background-image: url("../Ressources/Images/mf-doom.jpeg");
 }
 
 .mixtapes .all .card .blockplay
@@ -903,7 +884,7 @@ i
     align-items: center;
     width: 95%;
     min-height: 95%;
-    background-image: url("../static/300ppi/pannelFichier\ 3.png");
+    background-image: url("../Ressources/300ppi/pannelFichier\ 3.png");
     background-size: cover;
     background-position: center;
     /* border: 2px solid white; */
@@ -1198,19 +1179,4 @@ footer .social-icons i
     {
         height: 200vh;
     }
-}
-.width-img {
-    width: 15px;
-}
-.width-nav-img{
-    width: 35px; 
-    margin-left: 7px;
-}
-.play-ico-width{
-    width: 20px;
-    height: 20px; 
-    margin: 0 10px;
-}
-#btnPause{
-    display: none;
 }

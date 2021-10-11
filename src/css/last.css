@@ -1,44 +1,24 @@
-@font-face {
-    font-family: CeraProLight;
-    src: url(./Ressources/Fonts/Cera\ Pro\ Light.otf);
-}
-
-@font-face {
-    font-family: CeraProRegular;
-    src: url(./Ressources/Fonts/Cera\ Pro\ Medium.otf);
-}
-
-@font-face {
-    font-family: CeraProBlack;
-    src: url(./Ressources/Fonts/Cera\ Pro\ Black.otf);
-}
-
-*
-{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-body
-{
+body {
     background: black;
     font-family: CeraProRegular;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
 
-.all
-{
+.all {
     position: relative;
 }
 
-#arrow-up
-{
+#arrow-up {
     position: fixed;
     background: rgba(0, 0, 0, 0.849);
     border-radius: 10px 0 0 10px;
@@ -48,8 +28,7 @@ a
     z-index: 100;
 }
 
-#arrow-up i
-{
+#arrow-up i {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,16 +38,14 @@ a
     font-size: 30px;
 }
 
-.header
-{
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
 }
 
-.header .title
-{
+.header .title {
     font-size: 50px;
     color: white;
     text-align: center;
@@ -146,9 +123,7 @@ a
     background-attachment: fixed;
 } */
 
-
-.content
-{
+.content {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -157,8 +132,7 @@ a
     flex-wrap: wrap;
 }
 
-.content .last-music
-{
+.content .last-music {
     position: relative;
     /* margin: 25px; */
     width: 20%;
@@ -167,25 +141,21 @@ a
     /* margin: -4px 0px; */
 }
 
-.content .last-music img
-{
+.content .last-music img {
     width: 100%;
     height: 100%;
     transition: 1s;
 }
 
-.content .last-music img:hover
-{
+.content .last-music img:hover {
     transform: scale(1.2);
 }
 
-.content .last-music span
-{
+.content .last-music span {
     color: black;
 }
 
-.content .last-music .meta-hour
-{
+.content .last-music .meta-hour {
     position: absolute;
     bottom: 58px;
     left: 3px;
@@ -197,8 +167,7 @@ a
     overflow: hidden;
 }
 
-.content .last-music .meta-artist
-{
+.content .last-music .meta-artist {
     position: absolute;
     bottom: 35px;
     left: 3px;
@@ -210,8 +179,7 @@ a
     overflow: hidden;
 }
 
-.content .last-music .meta-music
-{
+.content .last-music .meta-music {
     position: absolute;
     bottom: 12px;
     left: 3px;
@@ -226,29 +194,25 @@ a
 /* RESPONSIVE */
 
 @media (max-width: 1200px) {
-    .content .last-music
-    {
+    .content .last-music {
         width: 25%;
     }
 }
 
 @media (max-width: 750px) {
-    .content .last-music
-    {
+    .content .last-music {
         width: 33.3333%;
     }
 }
 
 @media (max-width: 550px) {
-    .content .last-music
-    {
+    .content .last-music {
         width: 50%;
     }
 }
 
 @media (max-width: 480px) {
-    .content .last-music
-    {
+    .content .last-music {
         width: 100%;
     }
 }

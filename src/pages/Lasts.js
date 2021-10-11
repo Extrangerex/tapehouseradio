@@ -1,3 +1,6 @@
+import Footer from "../components/Footer";
+import '../css/last.css';
+
 export function Lasts() {
     const lastMusics = [
         {
@@ -60,16 +63,16 @@ export function Lasts() {
             </section>
 
             <div id="arrow-up">
-                <a href="#top"><i className="fas fa-chevron-up"/></a>
+                <a href="#top"><i className="fas fa-chevron-up" /></a>
             </div>
 
             <section className="content-jazz content">
                 {lastMusics.map(music => (
                     <div className="last-music">
-                        <img src={music.img} alt="Last one" className="img-one img"/>
+                        <img src={music.img} alt="Last one" className="img-one img" />
                         <div className="meta-hour">
-                    <span>{music.metaHour}
-                    </span>
+                            <span>{music.metaHour}
+                            </span>
                         </div>
                         <div className="meta-artist">
                             <span>{music.artists}</span>
@@ -100,14 +103,7 @@ export function Lasts() {
                     </div>
                 </section>
 
-                <footer>
-                    <div className="social-icons">
-                        <a href="#" className="facebook"><i className="fab fa-facebook-f"/></a>
-                        <a href="#" className="instagram"><i className="fab fa-instagram"/></a>
-                        <a href="#" className="spotify"><i className="fab fa-spotify"/></a>
-                        <a href="#" className="youtube"><i className="fab fa-mixcloud"/></a>
-                    </div>
-                </footer>
+                <Footer></Footer>
 
             </section>
         </section>
