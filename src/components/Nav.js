@@ -116,7 +116,7 @@ function Nav() {
             <ul>
               <li>SHOP</li>
               <li>STUDIO</li>
-              <a href="./connect.html">
+              <Link to="/connect">
                 <li className="account">
                   <img
                     src={icons8Utilisateur96}
@@ -125,7 +125,7 @@ function Nav() {
                   />
                   MY THR
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         </div>
