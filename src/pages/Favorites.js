@@ -7,7 +7,6 @@ export function Favorites() {
       <div className="header-favorites">
         <h1>FAVORITES</h1>
       </div>
-
       <div className="favorites">
         <div className="card">
           <div className="contain-card">
