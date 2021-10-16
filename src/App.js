@@ -21,6 +21,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { ApplicationContextProvider } from "./context/application-context";
 
 function App() {
   library.add([
@@ -38,17 +39,19 @@ function App() {
   ]);
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/connect" component={Connect} />
-        <Route path="/favorites" component={Favorites} />
-        <Route path="/lasts" component={Lasts} />
-        <Route path="/payment" component={Payment} />
-        <Route path="/prices" component={Prices} />
-        <Route path="/profile" component={Profile} />
-      </Switch>
-    </Router>
+    <ApplicationContextProvider>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/connect" component={Connect} />
+          <Route path="/favorites" component={Favorites} />
+          <Route path="/lasts" component={Lasts} />
+          <Route path="/payment" component={Payment} />
+          <Route path="/prices" component={Prices} />
+          <Route path="/profile" component={Profile} />
+        </Switch>
+      </Router>
+    </ApplicationContextProvider>
   );
 }
 

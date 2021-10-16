@@ -1,14 +1,23 @@
-/* eslint-disable react/style-prop-object */
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import icons8Utilisateur96 from "../static/png/icons8-utilisateur-96.png";
 import nouveaulogonoirFichier from "../static/svg/nouveaulogonoirFichier 3.png";
-import icons8Jouer90 from "../static/png/icons8-jouer-90.png";
 import $ from "jquery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { ApplicationContext } from "../context/application-context";
 
 function Nav() {
   const menuBtn = document.querySelector(".menu-btn");
+
+  const {
+    isPlayingPlayer1,
+    isPlayingPlayer2,
+    handlePause,
+    handlePlayStream1,
+    handlePlayStream2,
+    player1Ref,
+    player2Ref,
+  } = useContext(ApplicationContext);
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -23,6 +32,8 @@ function Nav() {
       setMenuOpen(false);
     }
   }, [menuOpen, menuBtn]);
+
+  console.log(player1Ref);
 
   return (
     <>
@@ -138,14 +149,16 @@ function Nav() {
             <div className="player">
               <div className="bouton">
                 <div className="controls">
-                  <FontAwesomeIcon icon={["fas", "play"]} />
+                  <FontAwesomeIcon
+                    icon={["fas", "play"]}
+                    onClick={() => handlePlayStream1()}
+                    style={{ display: isPlayingPlayer1 ? "none" : "block" }}
+                  />
                   <FontAwesomeIcon
                     icon={["fas", "pause"]}
-                    style={{ display: "none" }}
+                    onClick={() => handlePause(player1Ref)}
+                    style={{ display: isPlayingPlayer1 ? "block" : "none" }}
                   />
-                </div>
-                <div className="radioStream">
-                  <audio id="jp_audio_0" preload="metadata"></audio>
                 </div>
               </div>
               <div className="metas">
@@ -159,11 +172,25 @@ function Nav() {
                 </span>
               </div>
               {/* <div className="current-music img">
-                        <img src="" className="pochette" id="cover" alt="" style="width: 32px; height: 32px; border: 1px solid white;">
-                    </div>
-                    <div className="radioStream">
-                        <audio id="jp_audio_1" preload="metadata"></audio>
-                    </div>  */}
+                <img
+                  src=""
+                  className="pochette"
+                  id="cover"
+                  alt=""
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    border: "1px solid white",
+                  }}
+                />
+              </div> */}
+              {/* <div className="radioStream">
+                <audio
+                  ref={player2Ref}
+                  id="jp_audio_1"
+                  preload="metadata"
+                ></audio>
+              </div> */}
             </div>
           </div>
           {/* <div className="separation"></div>  */}
@@ -173,11 +200,21 @@ function Nav() {
               <div className="pointlive"></div>
             </div>
             <div className="player">
-              <img
-                src={icons8Jouer90}
-                alt=""
-                style={{ width: "20px", height: "20px", margin: "0 10px" }}
-              />
+              <div className="bouton">
+                <div className="controls">
+                  <FontAwesomeIcon
+                    icon={["fas", "play"]}
+                    onClick={() => handlePlayStream2()}
+                    style={{ display: isPlayingPlayer2 ? "none" : "block" }}
+                  />
+                  <FontAwesomeIcon
+                    icon={["fas", "pause"]}
+                    onClick={() => handlePause(player2Ref)}
+                    style={{ display: isPlayingPlayer2 ? "block" : "none" }}
+                  />
+                </div>
+              </div>
+
               <div className="btn-play-pause">
                 <img src="" alt="" />
               </div>
