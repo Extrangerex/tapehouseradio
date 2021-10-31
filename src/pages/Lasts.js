@@ -1,67 +1,15 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import { useLasts } from "../hooks/useLasts";
 import "../scss/last.scss";
 
-import codyFichier14 from "../static/png/codyFichier 14.png";
-import crackazatFichier10 from "../static/png/crackazatFichier 10.png";
-import ishmaelFichier17 from "../static/png/ishmaelFichier 17.png";
-import liberatorzFichier16 from "../static/png/liberatorzFichier 16.png";
-import matazzFichie13 from "../static/png/matazzFichier 13.png";
-import mfFichier15 from "../static/png/mfFichier 15.png";
-import prozakFichier12 from "../static/png/prozakFichier 12.png";
-import ummFichier11 from "../static/png/ummFichier 11.png";
-
 export function Lasts() {
-  const lastMusics = [
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: codyFichier14,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: crackazatFichier10,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: ishmaelFichier17,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: liberatorzFichier16,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: matazzFichie13,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: mfFichier15,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: prozakFichier12,
-    },
-    {
-      metaHour: "10:10",
-      artists: "Jazz Liberatorz",
-      music: "Fucking Game",
-      img: ummFichier11,
-    },
-  ];
+  const { lastMusics1 } = useLasts();
+
+  const getMetaHour = (ts) => {
+    const date = new Date(ts);
+    return `${date?.getHours()}:${date?.getMinutes()}`;
+  };
 
   return (
     <>
@@ -79,17 +27,21 @@ export function Lasts() {
           </div>
 
           <section className="content-jazz content">
-            {lastMusics.map((music) => (
+            {lastMusics1.map((music) => (
               <div className="last-music">
-                <img src={music.img} alt="Last one" className="img-one img" />
+                <img
+                  src={music?.img_large_url}
+                  alt="Last one"
+                  className="img-one img"
+                />
                 <div className="meta-hour">
-                  <span>{music.metaHour}</span>
+                  <span>{getMetaHour(music?.ts)}</span>
                 </div>
                 <div className="meta-artist">
-                  <span>{music.artists}</span>
+                  <span>{music.author}</span>
                 </div>
                 <div className="meta-music">
-                  <span>{music.music}</span>
+                  <span>{music.title}</span>
                 </div>
               </div>
             ))}
