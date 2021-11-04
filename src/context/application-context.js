@@ -1,4 +1,5 @@
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 
 const defaultApplicationContextValue = {
   user: null,
@@ -21,6 +22,7 @@ export function ApplicationContextProvider({ children }) {
   const [isPlayingPlayer2, setIsPlayingPlayer2] = useState(false);
   const player1Ref = useRef();
   const player2Ref = useRef();
+  const fetch = useFetch();
 
   const handlePlayStream1 = useCallback(() => {
     player2Ref.current.setAttribute("src", null);
