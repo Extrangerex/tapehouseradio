@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./pages/Home";
@@ -22,6 +22,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { ApplicationContextProvider } from "./context/application-context";
+import { FirebaseAppProvider } from "reactfire";
+import { firebaseConfig } from "./config/firebase";
+import { MoonLoader } from "react-spinners";
 
 function App() {
   library.add([
@@ -39,19 +42,23 @@ function App() {
   ]);
 
   return (
-    <ApplicationContextProvider>
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/connect" component={Connect} />
-          <Route path="/favorites" component={Favorites} />
-          <Route path="/lasts" component={Lasts} />
-          <Route path="/payment" component={Payment} />
-          <Route path="/prices" component={Prices} />
-          <Route path="/profile" component={Profile} />
-        </Switch>
-      </Router>
-    </ApplicationContextProvider>
+    <Suspense fallback={<MoonLoader></MoonLoader>}>
+      <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <ApplicationContextProvider>
+          <Router>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/connect" component={Connect} />
+              <Route path="/favorites" component={Favorites} />
+              <Route path="/lasts" component={Lasts} />
+              <Route path="/payment" component={Payment} />
+              <Route path="/prices" component={Prices} />
+              <Route path="/profile" component={Profile} />
+            </Switch>
+          </Router>
+        </ApplicationContextProvider>
+      </FirebaseAppProvider>
+    </Suspense>
   );
 }
 

@@ -1,9 +1,13 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+import { useFirebaseApp } from "reactfire";
 import consts from "../config/consts";
+import { FetchError } from "../models/Error";
 import { useFetch } from "./useFetch";
 
 export const useAuth = () => {
   const { request } = useFetch();
+
+  const firebase = useFirebaseApp();
 
   const user = JSON.parse(localStorage.getItem("AUTH-DATA"));
 
@@ -11,32 +15,60 @@ export const useAuth = () => {
 
   const signout = useCallback(() => localStorage.removeItem("AUTH-DATA"), []);
 
-  const login = useCallback(async (username, password) => {
-    const result = await request(`${consts.apiBaseUrl}/jwt-auth/v1/token`, {
-      data: {
-        username,
-        password,
-      },
-      method: "POST",
-    });
+  const login = useCallback(
+    async (username, password) => {
+      const result = await request(`${consts.apiBaseUrl}/jwt-auth/v1/token`, {
+        data: {
+          username,
+          password,
+        },
+        method: "POST",
+      });
 
-    const json = await result.json();
+      const json = await result.json();
 
-    if (!json?.success) {
-      throw { ...json, status: result.status };
-    }
+      if (!json?.success) {
+        throw FetchError({ ...json }, result.status);
+      }
 
-    localStorage.setItem("AUTH-DATA", JSON.stringify(json?.data));
+      localStorage.setItem("AUTH-DATA", JSON.stringify(json?.data));
 
-    return json;
-  }, []);
+      return json;
+    },
+    [request]
+  );
 
-  const signup = useCallback(async () => {}, []);
+  const signup = useCallback(
+    async (username, password, email) => {
+      const result = await request(`${consts.apiBaseUrl}/wp/v2/users`, {
+        data: {
+          username,
+          password,
+          email,
+        },
+        method: "POST",
+      });
+
+      const json = await result.json();
+
+      if (!json?.success) {
+        throw FetchError({ ...json }, result.status);
+      }
+
+      localStorage.setItem("AUTH-DATA", JSON.stringify(json?.data));
+
+      return json;
+    },
+    [request]
+  );
+
+  useEffect(() => {}, [firebase]);
 
   return {
     login,
     signout,
     user,
-    authenticated
+    authenticated,
+    signup,
   };
 };

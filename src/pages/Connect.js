@@ -75,6 +75,15 @@ export function Connect() {
                   />
 
                   <label>
+                    <b>Email address</b>
+                  </label>
+                  <input
+                    type="email"
+                    {...register("email", { required: true })}
+                    placeholder="Type your email"
+                  />
+
+                  <label>
                     <b>Password</b>
                   </label>
                   <input
