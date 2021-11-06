@@ -2,11 +2,24 @@ import { Logo } from "../components/commons/Logo";
 import { useForm } from "react-hook-form";
 import "../scss/connect.scss";
 import Nav from "../components/Nav";
+import { useAuth } from "../hooks/useAuth";
 
 export function Connect() {
-  const { handleSubmit, register } = useForm();
+  const loginForm = useForm();
+  const signUpForm = useForm();
+  const { signup, login } = useAuth();
 
-  const onSubmit = (data) => {};
+  const onSignupSubmit = (data) => {
+    signup(data?.username, data?.password, data?.email).then(() =>
+      console.log("success")
+    );
+  };
+
+  const onLoginSubmit = (data) => {
+    login(data?.username, data?.password)
+      .then(() => console.log("logged in"))
+      .catch(console.log);
+  };
 
   return (
     <>
@@ -24,16 +37,18 @@ export function Connect() {
               {/*    <span className="log-in">LOG IN</span>*/}
               {/*</div>*/}
               <section className="forms">
-                <form className="log-in">
+                <form
+                  className="log-in"
+                  onSubmit={loginForm.handleSubmit(onLoginSubmit)}
+                >
                   <h1>Connexion</h1>
-                  <input type="hidden" value="log-in" />
 
                   <label>
                     <b>User name</b>
                   </label>
                   <input
                     type="text"
-                    {...register("username", { required: true })}
+                    {...loginForm.register("username", { required: true })}
                     placeholder="Type your username"
                   />
 
@@ -42,7 +57,7 @@ export function Connect() {
                   </label>
                   <input
                     type="password"
-                    {...register("password", { required: true })}
+                    {...loginForm.register("password", { required: true })}
                     placeholder="Type your password"
                     name="password"
                     required
@@ -54,23 +69,18 @@ export function Connect() {
                 <div className="or">- OR -</div>
 
                 <form
-                  onSubmit={handleSubmit(onSubmit)}
+                  onSubmit={signUpForm.handleSubmit(onSignupSubmit)}
                   method="POST"
                   className="create-account"
                 >
                   <h2>Create account</h2>
-
-                  <input
-                    type={"hidden"}
-                    {...register("action", { value: "create-account" })}
-                  />
 
                   <label>
                     <b>User name</b>
                   </label>
                   <input
                     type="text"
-                    {...register("username", { required: true })}
+                    {...signUpForm.register("username", { required: true })}
                     placeholder="Type your username"
                   />
 
@@ -79,7 +89,7 @@ export function Connect() {
                   </label>
                   <input
                     type="email"
-                    {...register("email", { required: true })}
+                    {...signUpForm.register("email", { required: true })}
                     placeholder="Type your email"
                   />
 
@@ -88,7 +98,7 @@ export function Connect() {
                   </label>
                   <input
                     type="password"
-                    {...register("password", { required: true })}
+                    {...signUpForm.register("password", { required: true })}
                     placeholder="Type your password"
                     name="password"
                   />
@@ -99,7 +109,7 @@ export function Connect() {
                   <input
                     type="password"
                     placeholder="Re-type your password"
-                    {...register("password", { required: true })}
+                    {...signUpForm.register("password", { required: true })}
                   />
 
                   <input type="submit" id="submit" value="CREATE ACCOUNT" />

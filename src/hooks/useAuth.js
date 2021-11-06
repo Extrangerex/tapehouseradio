@@ -1,3 +1,4 @@
+import { getAuth, signInAnonymously } from "@firebase/auth";
 import { useCallback, useEffect } from "react";
 import { useFirebaseApp } from "reactfire";
 import consts from "../config/consts";
@@ -7,7 +8,9 @@ import { useFetch } from "./useFetch";
 export const useAuth = () => {
   const { request } = useFetch();
 
-  const firebase = useFirebaseApp();
+  const app = useFirebaseApp();
+
+  const auth = getAuth(app);
 
   const user = JSON.parse(localStorage.getItem("AUTH-DATA"));
 
@@ -54,15 +57,17 @@ export const useAuth = () => {
       if (!json?.success) {
         throw FetchError({ ...json }, result.status);
       }
-
-      localStorage.setItem("AUTH-DATA", JSON.stringify(json?.data));
-
+      
       return json;
     },
     [request]
   );
 
-  useEffect(() => {}, [firebase]);
+  useEffect(() => {
+    auth.onAuthStateChanged((credential) => {
+      if (!credential) signInAnonymously(auth);
+    });
+  }, [auth]);
 
   return {
     login,
