@@ -12,7 +12,9 @@ export const useFetch = () => {
       return fetch(url, {
         method: options?.method ?? "GET",
         body: JSON.stringify(options?.data),
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
       }).then(async (result) => {
         if (result.status !== 200) {
           throw await result?.json();

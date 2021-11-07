@@ -20,7 +20,7 @@ export const useAuth = () => {
 
   const login = useCallback(
     async (username, password) => {
-      const result = await request(`${consts.apiBaseUrl}/jwt-auth/v1/token`, {
+      const result = await request(`/jwt-auth/v1/token`, {
         data: {
           username,
           password,
@@ -57,7 +57,7 @@ export const useAuth = () => {
       if (!json?.success) {
         throw FetchError({ ...json }, result.status);
       }
-      
+
       return json;
     },
     [request]
