@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import "../scss/connect.scss";
 import Nav from "../components/Nav";
 import { useAuth } from "../hooks/useAuth";
+import swal from "sweetalert2";
 
 export function Connect() {
   const loginForm = useForm();
@@ -10,15 +11,27 @@ export function Connect() {
   const { signup, login } = useAuth();
 
   const onSignupSubmit = (data) => {
-    signup(data?.username, data?.password, data?.email).then(() =>
-      console.log("success")
-    );
+    signup(data?.username, data?.password, data?.email)
+      .then(() => console.log("success"))
+      .catch((err) => {
+        swal.fire({
+          html: err.message,
+          title: "Oopss",
+          icon: "error",
+        });
+      });
   };
 
   const onLoginSubmit = (data) => {
     login(data?.username, data?.password)
       .then(() => console.log("logged in"))
-      .catch(console.log);
+      .catch((err) => {
+        swal.fire({
+          html: err.message,
+          title: "Oopss",
+          icon: "error",
+        });
+      });
   };
 
   return (

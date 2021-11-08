@@ -5,6 +5,12 @@ import consts from "../config/consts";
 import { FetchError } from "../models/Error";
 import { useFetch } from "./useFetch";
 
+/**
+ * user example
+ * {"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3dwdGVzdCIsImlhdCI6MTYzNjM0ODg5OSwibmJmIjoxNjM2MzQ4ODk5LCJleHAiOjE2MzY5NTM2OTksImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.-PJ2LqabTEitIhJ6ZBlg2VL9OW5uo3MfReHBT7a25ik",
+ * "user_email":"jopichardomartinez@gmail.com","user_nicename":"admin","user_display_name":"admin"}
+ */
+
 export const useAuth = () => {
   const { request } = useFetch();
 
@@ -20,7 +26,7 @@ export const useAuth = () => {
 
   const login = useCallback(
     async (username, password) => {
-      const result = await request(`/jwt-auth/v1/token`, {
+      const result = await request(`${consts.apiBaseUrl}/jwt-auth/v1/token`, {
         data: {
           username,
           password,
@@ -30,11 +36,7 @@ export const useAuth = () => {
 
       const json = await result.json();
 
-      if (!json?.success) {
-        throw FetchError({ ...json }, result.status);
-      }
-
-      localStorage.setItem("AUTH-DATA", JSON.stringify(json?.data));
+      localStorage.setItem("AUTH-DATA", JSON.stringify(json));
 
       return json;
     },
@@ -55,7 +57,7 @@ export const useAuth = () => {
       const json = await result.json();
 
       if (!json?.success) {
-        throw FetchError({ ...json }, result.status);
+        throw new FetchError({ ...json }, result.status);
       }
 
       return json;

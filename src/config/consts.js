@@ -1,5 +1,5 @@
 const Consts = {
-  apiBaseUrl: "https://www.tapehouse.shop/wp-json",
+  apiBaseUrl: "http://localhost/wptest/wp-json",
 };
 
 export default Consts;

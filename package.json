@@ -20,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-spinners": "^0.11.0",
     "reactfire": "^4.2.0",
+    "sweetalert2": "^11.1.9",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -49,5 +50,5 @@
   "devDependencies": {
     "sass": "^1.42.1"
   },
-  "proxy": "https://cors-anywhere.herokuapp.com/"
+  "proxy": "https://cors-anywhere.herokuapp.com"
 }
