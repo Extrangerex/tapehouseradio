@@ -4,11 +4,12 @@ import "../scss/connect.scss";
 import Nav from "../components/Nav";
 import { useAuth } from "../hooks/useAuth";
 import swal from "sweetalert2";
+import { useEffect } from "react";
 
 export function Connect() {
   const loginForm = useForm();
   const signUpForm = useForm();
-  const { signup, login } = useAuth();
+  const { signup, login, user } = useAuth();
 
   const onSignupSubmit = (data) => {
     signup(data?.username, data?.password, data?.email)
@@ -21,6 +22,10 @@ export function Connect() {
         });
       });
   };
+
+  // useEffect(() => {
+  //   if()
+  // }, []);
 
   const onLoginSubmit = (data) => {
     login(data?.username, data?.password)
