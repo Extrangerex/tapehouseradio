@@ -73,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 WP Plugins
 JSON API= https://github.com/PI-Media/json-api
 JWT Authentication for WP-API=https://github.com/WP-API/WP-API
+
+
+curl --user "ElliotJoPichardo:7sr7jgEWBtTY8wz9Y15b48Iv" -d '{"username":"jane","password":"secret","email":"jane@example.com"}' -H "Content-Type: application/json" -X POST https://www.tapehouse.shop/wp-json/wp/v2/users

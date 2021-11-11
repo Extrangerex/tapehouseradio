@@ -2,14 +2,25 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { useLasts } from "../hooks/useLasts";
 import "../scss/last.scss";
+import { useEffect } from "react";
 
-export function Lasts() {
-  const { lastMusics1 } = useLasts();
+export function Lasts({ id }) {
+  const { lastMusics1, lastMusics2, getLastMusics } = useLasts();
 
   const getMetaHour = (ts) => {
     const date = new Date(ts);
     return `${date?.getHours()}:${date?.getMinutes()}`;
   };
+
+  useEffect(() => {
+    if (!lastMusics1 || lastMusics1?.length < 1) {
+      getLastMusics(null, 1);
+    }
+
+    if (!lastMusics2 || lastMusics2.length < 1) {
+      getLastMusics(null, 2);
+    }
+  }, [lastMusics1, lastMusics2, getLastMusics]);
 
   return (
     <>

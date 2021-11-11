@@ -50,7 +50,12 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/connect" component={Connect} />
               <Route path="/favorites" component={Favorites} />
-              <Route path="/lasts" component={Lasts} />
+              <Route path="/lasts/1">
+                <Lasts id="1"></Lasts>
+              </Route>
+              <Route path="/lasts/2">
+                <Lasts id="2"></Lasts>
+              </Route>
               <Route path="/payment" component={Payment} />
               <Route path="/prices" component={Prices} />
               <Route path="/profile" component={Profile} />

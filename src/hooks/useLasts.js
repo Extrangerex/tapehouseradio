@@ -1,30 +1,36 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useFetch } from "./useFetch";
 
 export const useLasts = () => {
   const { request } = useFetch();
   const [lastMusics1, setLastMusics1] = useState([]);
+  const [lastMusics2, setLastMusics2] = useState([]);
+
   const live1Url =
-    "https://manager5.streamradio.fr:1280/api/v2/history/?format=json";
+    "https://manager6.streamradio.fr:1590/api/v2/history/?format=json";
+
+  const live2Url =
+    "https://manager6.streamradio.fr:2430/api/v2/history/?format=json";
 
   const getLastMusics = useCallback(
-    (limit = 100) => {
-      request(`${live1Url}&limit=${limit}`)
+    ( limit = 100, id = 1 ) => {
+      request(`${id === 1 ? live1Url : live2Url}&limit=${limit ?? 100}`)
         .then((request) => request.json())
         .then((data) => {
-          setLastMusics1(data?.results);
+          if (id === 1) {
+            setLastMusics1(data?.results);
+          } else if (id === 2) {
+            setLastMusics2(data?.results);
+          }
         });
     },
     [request]
   );
 
-  useEffect(() => {
-    if (!lastMusics1 || lastMusics1?.length < 1) {
-      getLastMusics();
-    }
-  }, [lastMusics1, getLastMusics]);
 
   return {
     lastMusics1,
+    lastMusics2,
+    getLastMusics
   };
 };

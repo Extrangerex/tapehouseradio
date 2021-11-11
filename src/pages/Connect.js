@@ -15,7 +15,16 @@ export function Connect() {
 
   const onSignupSubmit = (data) => {
     signup(data?.username, data?.password, data?.email)
-      .then(() => {})
+      .then(() => {
+        signUpForm.reset();
+
+        swal.fire({
+          html: '<p>Votre intégration au CLUB HOUSE a été faite avec succès</p>',
+          title: "Félicitations",
+          icon: "success",
+          confirmButtonColor: '#000'
+        });
+      })
       .catch((err) => {
         swal.fire({
           html: err.message,

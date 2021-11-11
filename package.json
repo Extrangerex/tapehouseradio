@@ -49,6 +49,5 @@
   },
   "devDependencies": {
     "sass": "^1.42.1"
-  },
-  "proxy": "https://cors-anywhere.herokuapp.com"
+}
 }

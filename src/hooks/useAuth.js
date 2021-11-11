@@ -2,7 +2,6 @@ import { getAuth, signInAnonymously } from "@firebase/auth";
 import { useCallback, useEffect } from "react";
 import { useFirebaseApp } from "reactfire";
 import consts from "../config/consts";
-import { FetchError } from "../models/Error";
 import { useFetch } from "./useFetch";
 
 /**
@@ -45,7 +44,7 @@ export const useAuth = () => {
 
   const signup = useCallback(
     async (username, password, email) => {
-      const result = await request(`${consts.apiBaseUrl}/wp/v2/users`, {
+      const result = await request(`${consts.apiBaseUrl}/users`, {
         data: {
           username,
           password,
@@ -55,10 +54,6 @@ export const useAuth = () => {
       });
 
       const json = await result.json();
-
-      if (!json?.success) {
-        throw new FetchError({ ...json }, result.status);
-      }
 
       return json;
     },
