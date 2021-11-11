@@ -5,15 +5,17 @@ import Nav from "../components/Nav";
 import { useAuth } from "../hooks/useAuth";
 import swal from "sweetalert2";
 import { useEffect } from "react";
+import { useHistory } from "react-router";
 
 export function Connect() {
   const loginForm = useForm();
   const signUpForm = useForm();
+  const history = useHistory();
   const { signup, login, user } = useAuth();
 
   const onSignupSubmit = (data) => {
     signup(data?.username, data?.password, data?.email)
-      .then(() => console.log("success"))
+      .then(() => {})
       .catch((err) => {
         swal.fire({
           html: err.message,
@@ -23,13 +25,18 @@ export function Connect() {
       });
   };
 
-  // useEffect(() => {
-  //   if()
-  // }, []);
+  useEffect(() => {
+    if (user != null) {
+      history.push("/");
+    }
+  }, [user, history]);
 
   const onLoginSubmit = (data) => {
     login(data?.username, data?.password)
-      .then(() => console.log("logged in"))
+      .then(() => {
+        history.push("/");
+        return;
+      })
       .catch((err) => {
         swal.fire({
           html: err.message,
