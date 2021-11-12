@@ -20,7 +20,7 @@ import {
   faSpotify,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { ApplicationContextProvider } from "./context/application-context";
 import { FirebaseAppProvider } from "reactfire";
 import { firebaseConfig } from "./config/firebase";
@@ -39,6 +39,7 @@ function App() {
     faGoogle,
     faGooglePlay,
     faFacebookF,
+    faHeart,
   ]);
 
   return (

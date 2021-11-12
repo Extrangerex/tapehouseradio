@@ -1,16 +1,47 @@
-import { getDatabase, push } from "@firebase/database";
-import { collection, getFirestore } from "@firebase/firestore";
+import { ref, set, push, query, getDatabase } from "@firebase/database";
 import { useCallback } from "react";
-import {  useFirebaseApp, useFirestore } from "reactfire"
+import { useDatabaseListData, useFirebaseApp } from "reactfire";
 import { useAuth } from "./useAuth";
 
+export const useFavorites = () => {
+  const { user } = useAuth();
+  const app = useFirebaseApp();
+  const database = getDatabase(app);
+  const favoritesRef = ref(
+    database,
+    `user-data/${user?.user_nicename}/favorites`
+  );
+  const favoritesQuery = query(favoritesRef);
+  const { status, data: favorites } = useDatabaseListData(favoritesQuery, {
+    idField: "id",
+  });
 
-const useFavorites = () => {
-    const app = useFirebaseApp();
-    const {user} = useAuth();
-    const ref = collection(useFirestore(), user?.id);
+  const pushFavorite = useCallback(
+    (music) => {
+      const newRef = push(favoritesRef);
+      set(newRef, {
+        ...music,
+        createdAt: Date.now(),
+        path: `user-data/${user?.user_nicename}/favorites/${newRef.key}`,
+      });
+    },
+    [favoritesRef, user]
+  );
 
-    const pushFavorite = useCallback((music) => {
-        // push
-    } , []);
-}
+  const removeFavorite = useCallback(
+    (music) => {
+      if (status !== "success") return;
+      set(favoritesRef, {
+        ...favorites.filter((value) => value?.artist !== music?.artist),
+      });
+    },
+    [favorites, status, favoritesRef]
+  );
+
+  return {
+    pushFavorite,
+    favorites,
+    status,
+    removeFavorite,
+  };
+};

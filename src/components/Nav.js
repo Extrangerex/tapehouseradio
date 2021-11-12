@@ -5,6 +5,7 @@ import $ from "jquery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { ApplicationContext } from "../context/application-context";
+import { FavoriteBtn } from "./FavoriteBtn";
 
 function Nav() {
   const menuBtn = document.querySelector(".menu-btn");
@@ -160,6 +161,7 @@ function Nav() {
                     style={{ display: isPlayingPlayer1 ? "block" : "none" }}
                   />
                 </div>
+                <FavoriteBtn music={{ artist: "name12334" }}></FavoriteBtn>
               </div>
               <div className="metas">
                 <div className="now">NOW :&nbsp;</div>
@@ -213,6 +215,7 @@ function Nav() {
                     style={{ display: isPlayingPlayer2 ? "block" : "none" }}
                   />
                 </div>
+                <FavoriteBtn music={{ artist: "name12334" }}></FavoriteBtn>
               </div>
 
               <div className="btn-play-pause">
