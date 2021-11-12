@@ -28,7 +28,6 @@ export function Profile() {
 
         for (let j = 0; j < contenu.length; j++) {
           if (contenu[j].getAttribute("data-anim") === index) {
-            console.log(j);
             contenu[j].classList.add("activeContenu");
           } else {
             contenu[j].classList.remove("activeContenu");

@@ -11,7 +11,7 @@ export const FavoriteBtn = ({ music, size = 16 }) => {
     return <></>;
   }
 
-  return favs?.find((value) => value?.artist === music?.artist) != null ? (
+  return favs?.find((value) => value?.id === music?.id) != null ? (
     <div onClick={() => removeFavorite(music)}>
       <FontAwesomeIcon
         icon={["fas", "heart"]}

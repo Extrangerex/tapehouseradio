@@ -12,9 +12,7 @@ export const useFavorites = () => {
     `user-data/${user?.user_nicename}/favorites`
   );
   const favoritesQuery = query(favoritesRef);
-  const { status, data: favorites } = useDatabaseListData(favoritesQuery, {
-    idField: "id",
-  });
+  const { status, data: favorites } = useDatabaseListData(favoritesQuery);
 
   const pushFavorite = useCallback(
     (music) => {
@@ -32,7 +30,7 @@ export const useFavorites = () => {
     (music) => {
       if (status !== "success") return;
       set(favoritesRef, {
-        ...favorites.filter((value) => value?.artist !== music?.artist),
+        ...favorites.filter((value) => value?.id !== music?.id),
       });
     },
     [favorites, status, favoritesRef]

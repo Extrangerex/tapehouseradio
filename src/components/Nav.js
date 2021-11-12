@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import icons8Utilisateur96 from "../static/png/icons8-utilisateur-96.png";
 import nouveaulogonoirFichier from "../static/svg/nouveaulogonoirFichier 3.png";
 import $ from "jquery";
@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { ApplicationContext } from "../context/application-context";
 import { FavoriteBtn } from "./FavoriteBtn";
+import { useLasts } from "../hooks/useLasts";
 
 function Nav() {
   const menuBtn = document.querySelector(".menu-btn");
@@ -22,6 +23,19 @@ function Nav() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const { lastMusics1, lastMusics2, getLastMusics } = useLasts();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getLastMusics(null, 1);
+      getLastMusics(null, 2);
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [getLastMusics]);
+
   const handleMenuBtn = useCallback(() => {
     $(".menu1").toggleclassName("isOpen");
 
@@ -33,8 +47,6 @@ function Nav() {
       setMenuOpen(false);
     }
   }, [menuOpen, menuBtn]);
-
-  console.log(player1Ref);
 
   return (
     <>
@@ -161,12 +173,12 @@ function Nav() {
                     style={{ display: isPlayingPlayer1 ? "block" : "none" }}
                   />
                 </div>
-                <FavoriteBtn music={{ artist: "name12334" }}></FavoriteBtn>
+                <FavoriteBtn music={lastMusics1[0]}></FavoriteBtn>
               </div>
               <div className="metas">
                 <div className="now">NOW :&nbsp;</div>
                 <span className="artiste" id="artist">
-                  Tape House
+                  {lastMusics1[0]?.title}
                 </span>
                 <span>&nbsp;-&nbsp;</span>
                 <span className="titre" id="titre">
@@ -215,7 +227,7 @@ function Nav() {
                     style={{ display: isPlayingPlayer2 ? "block" : "none" }}
                   />
                 </div>
-                <FavoriteBtn music={{ artist: "name12334" }}></FavoriteBtn>
+                <FavoriteBtn music={lastMusics2[0]}></FavoriteBtn>
               </div>
 
               <div className="btn-play-pause">
@@ -224,10 +236,10 @@ function Nav() {
               <div className="metas">
                 <div className="now">NOW :&nbsp;</div>
                 <div className="artist">
-                  <span>TOUR MAUBOURG</span>
+                  <span>{lastMusics2[0]?.author}</span>
                 </div>
                 <div className="music">
-                  <span>ALLEGRESSE</span>
+                  <span>{lastMusics2[0]?.title}</span>
                 </div>
               </div>
               {/* <img src="./Ressources/jpg/img2.jpg" alt="Image musique en cours live 2" style="width: 32px; height: 32px; border: 1px solid white;">  */}
