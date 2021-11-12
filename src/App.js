@@ -11,6 +11,7 @@ import { Profile } from "./pages/Profile";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faApple,
+  faDeezer,
   faFacebook,
   faFacebookF,
   faGoogle,
@@ -40,6 +41,7 @@ function App() {
     faGooglePlay,
     faFacebookF,
     faHeart,
+    faDeezer,
   ]);
 
   return (
