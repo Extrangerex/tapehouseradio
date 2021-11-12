@@ -1,5 +1,5 @@
 const Consts = {
-  apiBaseUrl: "http://localhost:5000",
+  apiBaseUrl: "https://thr-translator-dev.herokuapp.com",
 };
 
 export default Consts;
